@@ -1,0 +1,13 @@
+{
+  "name": "proxy",
+  "version": "1.0.0",
+  "license": "MIT",
+  "dependencies": {
+    "http-proxy": "^1.14.0"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-rsync": "^1.0.1",
+    "load-grunt-tasks": "^3.5.2"
+  }
+}
