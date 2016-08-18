@@ -8,6 +8,7 @@
   "devDependencies": {
     "grunt": "^1.0.1",
     "grunt-rsync": "^1.0.1",
+    "grunt-ssh": "^0.12.9",
     "load-grunt-tasks": "^3.5.2"
   }
 }

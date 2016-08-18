@@ -22,10 +22,26 @@ module.exports = function(grunt) {
           dest: process.env.PROXY_DEPLOY_HOST_DIR
         }
       }
+    },
+    sshexec: {
+      options: {
+        host: process.env.PROXY_DEPLOY_HOST,
+        port: 22,
+        username: process.env.PROXY_DEPLOY_HOST_USERNAME,
+        agent: process.env.SSH_AUTH_SOCK
+      },
+      npmInstall: {
+        command: 'cd ' + process.env.PROXY_DEPLOY_HOST_DIR + ' && npm install --production'
+      },
+      foreverRestartAll: {
+        command: 'cd ' + process.env.PROXY_DEPLOY_HOST_DIR + ' && forever restartall'
+      }
     }
   });
 
   grunt.registerTask('deploy', [
-    'rsync:app'
+    'rsync:app',
+    'sshexec:npmInstall',
+    'sshexec:foreverRestartAll'
   ]);
 };
