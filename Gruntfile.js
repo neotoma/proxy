@@ -12,11 +12,12 @@ module.exports = function(grunt) {
       app: {
         options: {
           exclude: [
-            ".DS_Store",
-            ".git*",
-            "node_modules",
-            "*.sublime*",
-            "Gruntfile.js"
+            '.DS_Store',
+            '.git*',
+            'node_modules',
+            '*.sublime*',
+            'Gruntfile.js',
+            '*.env'
           ],
           src: './',
           dest: process.env.PROXY_DEPLOY_HOST_DIR
