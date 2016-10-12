@@ -5,7 +5,7 @@ It allows for access to both servers from the same port (e.g. browser default `8
 The following environment variables are required:
 
 - `PROXY_PORT`: Port through which to serve HTTP requests with this proxy on host (e.g. `80`)
-- `PROXY_SECURE_PORT`: Port through which to serve HTTPs requests with this proxy on host (e.g. `80`)
+- `PROXY_SECURE_PORT`: Port through which to serve HTTPs requests with this proxy on host (e.g. `443`)
 - `PROXY_WEB_EXTERNAL`: Subdomain through which to serve the web client (e.g. `example.com`)
 - `PROXY_WEB_INTERNAL`: Root domain with port used by the web server on host (e.g. `example.com:4200`)
 - `PROXY_SERVER_EXTERNAL`: Subdomain through which to serve the API (e.g. `api.example.com`)
