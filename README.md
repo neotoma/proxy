@@ -28,7 +28,7 @@ If you intend to deploy the server to another system using scripts within the "D
 
 If you want to develop or deploy multiple environments using the same repository, you can add environment and cert files to the base directory that contain a suffix identifier. For example, you can add support for an environment called "foo" by adding `.env-foo` and `.env-foo-deploy` files and a `.certs-foo` directory. These files and directory would also be ignored by Git.
 
-By setting `PROXY_ENV` to `foo` in the environment when running the app or any scripts per below, those files will be used instead of the default environment and certificate files to populate runtime variables. For example, you could then execute `PROXY_ENV=foo node app.js` to start the app in the "foo" environment.
+By setting `PROXY_ENV` to `foo` in the environment when running the app or any scripts per below, these files will be used instead of the default environment and certificate files to populate runtime variables. For example, you could then execute `PROXY_ENV=foo node app.js` to start the app in the "foo" environment.
 
 ## Developing and deploying the server
 
