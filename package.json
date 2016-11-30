@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "license": "MIT",
   "dependencies": {
+    "dotenv": "^2.0.0",
     "http-proxy": "^1.14.0"
   },
   "devDependencies": {
     "grunt": "^1.0.1",
+    "grunt-nodemon": "^0.4.2",
     "grunt-rsync": "^1.0.1",
     "grunt-ssh": "^0.12.9",
     "load-grunt-tasks": "^3.5.2"
