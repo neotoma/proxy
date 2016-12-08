@@ -1,4 +1,4 @@
-require('./dotenv');
+require('./lib/env');
 var httpProxy = require('http-proxy');
 var proxy = httpProxy.createProxy();
 var fs = require('fs');

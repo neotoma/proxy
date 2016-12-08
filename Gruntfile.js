@@ -1,4 +1,4 @@
-require('./dotenv');
+require('./lib/env');
 
 module.exports = function(grunt) {
   'use strict';
@@ -53,8 +53,11 @@ module.exports = function(grunt) {
       npmInstall: {
         command: 'cd ' + process.env.PROXY_DEPLOY_HOST_DIR + ' && npm install --production'
       },
-      foreverRestartAll: {
+      forever: {
         command: 'cd ' + process.env.PROXY_DEPLOY_HOST_DIR + ' && forever restart app.js || forever start app.js'
+      },
+      systemd: {
+        command: 'systemctl restart proxy || systemctl start proxy'
       }
     }
   });
@@ -83,7 +86,16 @@ module.exports = function(grunt) {
 
   grunt.registerTask('deploy-app', 'Deploy app, install modules and start/restart', [
     'rsync:app',
-    'sshexec:npmInstall',
-    'sshexec:foreverRestartAll'
+    'sshexec:npmInstall'
+  ]);
+
+  grunt.registerTask('deploy-forever', 'Deploy app, install modules and start/restart with forever', [
+    'deploy',
+    'sshexec:forever'
+  ]);
+
+  grunt.registerTask('deploy-systemd', 'Deploy app, install modules and start/restart with systemd', [
+    'deploy',
+    'sshexec:systemd'
   ]);
 };
