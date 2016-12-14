@@ -4,6 +4,8 @@ This repository contains the source code for an app that acts as a server proxy 
 
 It allows for access to both servers from the same port (e.g. browser default `80`) but different subdomains (e.g. root and `api.`). The proxy defaults to routing the web server if the subdomain is unrecognized.
 
+A live example of this proxy server can be found at [markmhendrickson.com](http://markmhendrickson.com). The web server can be accessed via either [markmhendrickson.com](http://markmhendrickson.com) or [markmhendrickson.com:4200](http://markmhendrickson.com:4200), and the API server can be accessed via either [api.markmhendrickson.com/attributes](http://api.markmhendrickson.com/attributes) or [markmhendrickson.com:4201/attributes](http://markmhendrickson.com:4201/attributes)
+
 ## Setting up the environment
 
 The code requires several variables to run or deploy the app. The following environment variables can be declared by adding a file named `.env` (in [INI format](https://en.wikipedia.org/wiki/INI_file)) to the base directory, assuming they're not declared elsewhere in the system already. Such a file will be ignored by Git.
@@ -38,9 +40,7 @@ With [Grunt](gruntjs.com) installed in addition to establishing your environment
 - `grunt deploy`: Deploys environment and certificate file dependencies, deploys the app remotely, and runs `npm install` remotely to ensure the installation of dependencies
 - `grunt deploy-dependencies`: Deploys environment and certificate file dependencies
 - `grunt deploy-app`: Deploys the app remotely and runs `npm install` remotely to ensure the installation of dependencies
-- `grunt deploy-forever`: Deploys environment and certificate file dependencies, deploys the app remotely, runs `npm install` remotely to ensure the installation of dependencies, and either starts or restarts the app remotely with [forever](https://github.com/foreverjs/forever). Ensure that Node with NPM and forever are installed remotely before running this script.
-- `grunt deploy-systemd`: Runs all tests locally, deploys environment and certificate file dependencies, deploys the app remotely, runs `npm install` remotely to ensure the installation of dependencies, and either starts or restarts the app remotely with [systemd](https://www.digitalocean.com/community/tutorials/systemd-essentials-working-with-services-units-and-the-journal). Ensure that Node and systemd with a service for the app called `proxy` are installed remotely before running this script.
 
-## Example usage
+If you add `forever` to any of the deployment scripts (e.g. `grunt deploy forever`), [forever](https://github.com/foreverjs/forever) will be used to start or restart the app remotely post-deployment. Ensure that Node with NPM and forever are installed remotely before appending this script.
 
-A live example of this proxy server can be found at [markmhendrickson.com](http://markmhendrickson.com). The web server can be accessed via either [markmhendrickson.com](http://markmhendrickson.com) or [markmhendrickson.com:4200](http://markmhendrickson.com:4200), and the API server can be accessed via either [api.markmhendrickson.com/attributes](http://api.markmhendrickson.com/attributes) or [markmhendrickson.com:4201/attributes](http://markmhendrickson.com:4201/attributes)
+If you add `systemd` to any of the deployment scripts (e.g. `grunt deploy systemd`), [systemd](https://www.digitalocean.com/community/tutorials/systemd-essentials-working-with-services-units-and-the-journal) will be used to start or restart the app remotely post-deployment. Ensure that Node and systemd with a service for the app called `proxy` are installed remotely before running this script.
