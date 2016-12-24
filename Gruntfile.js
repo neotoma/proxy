@@ -57,7 +57,7 @@ module.exports = function(grunt) {
         command: 'cd ' + process.env.PROXY_DEPLOY_HOST_DIR + ' && forever restart app.js || forever start app.js'
       },
       systemd: {
-        command: 'systemctl restart proxy || systemctl start proxy'
+        command: 'sudo systemctl restart proxy || sudo systemctl start proxy'
       }
     }
   });
