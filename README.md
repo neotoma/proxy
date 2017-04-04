@@ -1,5 +1,6 @@
 # proxy
 
+[![Codeship badge](https://codeship.com/projects/fc008360-f90f-0134-9e36-76184fa5b855/status?branch=master)](https://app.codeship.com/projects/132772)
 [![Code Climate](https://codeclimate.com/github/neotoma/proxy/badges/gpa.svg)](https://codeclimate.com/github/neotoma/proxy)
 [![Code Climate issues badge](https://codeclimate.com/github/neotoma/proxy/badges/issue_count.svg)](https://codeclimate.com/github/neotoma/proxy/issues)
 [![David badge](https://david-dm.org/neotoma/proxy.svg)](https://david-dm.org/neotoma/proxy)
