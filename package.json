@@ -10,8 +10,6 @@
     "grunt-cli": "^1.2.0",
     "grunt-hoist": "1.0.6",
     "grunt-nodemon": "^0.4.2",
-    "grunt-rsync": "^1.0.1",
-    "grunt-ssh": "^0.12.9",
     "load-grunt-tasks": "^3.5.2"
   },
   "license": "MIT",
