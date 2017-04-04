@@ -1,16 +1,27 @@
 {
-  "name": "proxy",
-  "version": "1.0.0",
-  "license": "MIT",
   "dependencies": {
-    "dotenv": "^2.0.0",
-    "http-proxy": "^1.14.0"
+    "debug": "^2.6.3",
+    "http-proxy": "^1.16.2",
+    "park-ranger": "1.0.6"
   },
+  "description": "Proxy server for HTTP and HTTPS requests",
   "devDependencies": {
     "grunt": "^1.0.1",
+    "grunt-cli": "^1.2.0",
+    "grunt-hoist": "1.0.6",
     "grunt-nodemon": "^0.4.2",
     "grunt-rsync": "^1.0.1",
     "grunt-ssh": "^0.12.9",
     "load-grunt-tasks": "^3.5.2"
-  }
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "name": "proxy",
+  "scripts": {
+    "dev": "grunt dev",
+    "deploy-all": "grunt hoist-deploy-all",
+    "deploy-app": "grunt hoist-deploy-app",
+    "deploy-dependencies": "grunt hoist-deploy-dependencies"
+  },
+  "version": "1.0.0"
 }
