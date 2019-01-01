@@ -8,7 +8,7 @@
   "devDependencies": {
     "grunt": "^1.0.1",
     "grunt-cli": "^1.2.0",
-    "grunt-hoist": "1.0.0",
+    "grunt-hoist": "^1.0.5",
     "grunt-nodemon": "^0.4.2",
     "load-grunt-tasks": "^3.5.2"
   },
