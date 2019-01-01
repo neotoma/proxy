@@ -1,8 +1,8 @@
 {
   "dependencies": {
-    "debug": "^2.6.3",
+    "debug": "^4.1.1",
     "http-proxy": "^1.16.2",
-    "park-ranger": "1.0.7"
+    "park-ranger": "^1.0.7"
   },
   "description": "Proxy server for HTTP and HTTPS requests",
   "devDependencies": {
