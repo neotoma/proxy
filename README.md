@@ -17,10 +17,11 @@ Configuration files and SSL certificates are managed by [Park Ranger](https://gi
 - ports
     - http (number) - Port on which proxy should listen for HTTP requests
     - https (number) - Port on which proxy should listen for HTTPS requests
-- targets (array[Target])
+- targets (array[Target]) – Targets with host values for matching requests
+- defaultTarget (Target) - Default target without host value should targets with host values not match requests
 
 #### Target (object)
-- host (string, required) - Hostname for which proxy should listen for requests
+- host (string) - Hostname for which proxy should listen for requests
 - http (string) - Hostname to which proxy should route HTTP requests
 - https (string) - Hostname to which proxy should route HTTPS requests
 
@@ -45,7 +46,11 @@ Configuration files and SSL certificates are managed by [Park Ranger](https://gi
   }, {
     "host": "api.example.com",
     "https": "example.com:9876"
-  }]
+  }],
+  "defaultTarget": {
+    "http": "example.com:9191",
+    "https": "example.com:9192"
+  }
 }
 ```
 

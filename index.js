@@ -36,10 +36,14 @@ debug('establishing proxy: %O', config);
     });
 
     if (!target) {
-      res.writeHead(404);
-      res.write('Not Found');
-      res.end();
-      return;
+      if (config.defaultTarget && config.defaultTarget[protocol]) {
+        target = config.defaultTarget[protocol];
+      } else {
+        res.writeHead(404);
+        res.write('Not Found');
+        res.end();
+        return;
+      }
     }
 
     debug('proxying %s request for host %s to target %s', protocol, req.headers.host, target);
